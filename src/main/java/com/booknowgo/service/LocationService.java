@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,7 +55,7 @@ public class LocationService {
     @Transactional(readOnly = true)
     public List<Location> searchLocations(String query) {
         if (query == null || query.trim().isEmpty()) {
-            return locationRepository.findAll();
+            return Collections.emptyList();
         }
         return locationRepository.searchLocations(query.trim());
     }

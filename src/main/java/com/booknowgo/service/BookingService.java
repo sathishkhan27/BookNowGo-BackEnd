@@ -216,7 +216,7 @@ public class BookingService {
                 .hotelId(hotel.getId())
                 .hotelName(hotel.getName())
                 .hotelAddress(hotel.getAddress())
-                .hotelCity(hotel.getLocation() != null ? hotel.getLocation().getCity() : "")
+                .hotelCity(hotel.getLocation() != null && hotel.getLocation().getCity() != null ? hotel.getLocation().getCity() : "Unknown")
                 .hotelImage(hotel.getPrimaryImageUrl())
                 .checkInTime(hotel.getCheckInTime())
                 .checkOutTime(hotel.getCheckOutTime())
